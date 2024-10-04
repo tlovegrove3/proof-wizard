@@ -1,6 +1,6 @@
 """
 Author: Terry Lovegrove
-File: proofwizard.py
+File: Proof_Wizard.py
 Date written: 9/29/2024
 Assignment: Final Project (tkinter gui)
 Purpose: GUI program that allows a user to select from a list of clients to generate
@@ -18,7 +18,7 @@ from tkinter import ttk
 from ttkbootstrap import Style
 
 
-class ProofWizard(tk.Tk):
+class Proof_Wizard(tk.Tk):
     """This is a tkinter module for generating proofs."""
 
     def __init__(self):
@@ -150,5 +150,5 @@ class ProofWizard(tk.Tk):
 
 
 if __name__ == "__main__":
-    app = ProofWizard()
+    app = Proof_Wizard()
     app.mainloop()
