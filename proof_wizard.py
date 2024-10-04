@@ -32,16 +32,16 @@ class ProofWizard(tk.Tk):
         # self.grid_columnconfigure(0, weight=1)  # Allow the first column to expand
 
         # Create a ttk Notebook for setting up multiple tabs
-        self.notebook = ttk.Notebook(self)
-        self.notebook.grid(row=0, column=0, sticky="nsew")
+        self.nb = ttk.Notebook(self)
+        self.nb.grid(row=0, column=0, sticky="nsew")
 
         # Create main frame for the "Main Proofs" tab
-        self.main_frame = ttk.Frame(self.notebook)
-        self.notebook.add(self.main_frame, text="Proof Setup")
+        self.frm_main = ttk.Frame(self.nb)
+        self.nb.add(self.frm_main, text="Proof Setup")
 
         # Create completed frame for the "Completed Proofs" tab
-        self.completed_frame = ttk.Frame(self.notebook)
-        self.notebook.add(self.completed_frame, text="Completed Proofs")
+        self.frm_completed = ttk.Frame(self.nb)
+        self.nb.add(self.frm_completed, text="Completed Proofs")
 
         # Get username from OS
         self.current_user = self.get_current_user()
@@ -56,64 +56,62 @@ class ProofWizard(tk.Tk):
         """Creating widgets for the main tab."""
 
         # Username label
-        self.user_label = ttk.Label(self.main_frame, text="User: " + self.current_user)
-        self.user_label.grid(row=0, column=0, padx=10, pady=10, sticky="nw")
+        self.lbl_user = ttk.Label(self.frm_main, text="User: " + self.current_user)
+        self.lbl_user.grid(row=0, column=0, padx=10, pady=10, sticky="nw")
 
         # Client label
-        self.client_label = ttk.Label(self.main_frame, text="Select Client:")
-        self.client_label.grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        self.lbl_client = ttk.Label(self.frm_main, text="Select Client:")
+        self.lbl_client.grid(row=3, column=0, padx=10, pady=10, sticky="w")
 
         # Dropdown of client list
-        self.client_field = ttk.Combobox(self.main_frame, values=self.clients)
-        self.client_field.grid(row=3, column=1, padx=10, pady=10)
+        self.combo_client = ttk.Combobox(self.frm_main, values=self.clients)
+        self.combo_client.grid(row=3, column=1, padx=10, pady=10)
 
         # Proof type label
-        self.proof_type_label = ttk.Label(self.main_frame, text="Select Proof Type:")
-        self.proof_type_label.grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        self.lbl_proof_type = ttk.Label(self.frm_main, text="Select Proof Type:")
+        self.lbl_proof_type.grid(row=4, column=0, padx=10, pady=10, sticky="w")
 
         # Proof type dropdown
         self.proof_type_field = ttk.Combobox(
-            self.main_frame, values=["Generic", "Approval"]
+            self.frm_main, values=["Generic", "Approval"]
         )
         self.proof_type_field.grid(row=4, column=1, padx=10, pady=10)
 
         # Button to generate proofs
-        self.generate_button = ttk.Button(
-            self.main_frame, text="Generate Proof", command=self.generate_proof
+        self.btn_make_proof = ttk.Button(
+            self.frm_main, text="Make Proof", command=self.make_proof
         )
-        self.generate_button.grid(
+        self.btn_make_proof.grid(
             row=5, column=1, columnspan=1, padx=10, pady=10, sticky="e"
         )
 
         # Exit button to close application
-        self.exit_button = ttk.Button(self.main_frame, text="Exit", command=self.quit)
-        self.exit_button.grid(
-            row=6, column=1, columnspan=1, padx=10, pady=10, sticky="e"
-        )
+        self.btn_exit = ttk.Button(self.frm_main, text="Exit", command=self.quit)
+        self.btn_exit.grid(row=6, column=1, columnspan=1, padx=10, pady=10, sticky="e")
 
         # Create a dropdown to select themes
-        self.theme_label = ttk.Label(self.main_frame, text="Select Theme:")
-        self.theme_label.grid(row=0, column=5, padx=10, pady=10)
+        self.lbl_theme = ttk.Label(self.frm_main, text="Select Theme:")
+        self.lbl_theme.grid(row=0, column=5, padx=10, pady=10)
 
         # Get the current theme
         self.theme_var = tk.StringVar(value=self.style.theme_use())
 
         # Setup theme dropdown and set the values
-        self.theme_dropdown = ttk.Combobox(self.main_frame, textvariable=self.theme_var)
-        self.theme_dropdown["values"] = self.style.theme_names()
-        self.theme_dropdown.grid(row=0, column=6, padx=10, pady=10)
+        self.combo_theme = ttk.Combobox(self.frm_main, textvariable=self.theme_var)
+        self.combo_theme["values"] = self.style.theme_names()
+        self.combo_theme.grid(row=0, column=6, padx=10, pady=10)
 
-        # Bind the dropdown selection event to the change_theme method
-        self.theme_dropdown.bind("<<ComboboxSelected>>", self.change_theme)
+        # Bind the combo selection event to the change_theme method
+        self.combo_theme.bind("<<ComboboxSelected>>", self.change_theme)
 
     def setup_completed_widgets(self):
         """Sets up widgets for the completed proofs tab"""
-        label = ttk.Label(self.completed_frame, text="Completed Proofs")
-        label.grid(row=0, column=0, columnspan=1, pady=10)
+        lbl = ttk.Label(self.frm_completed, text="Completed Proofs")
+        lbl.grid(row=0, column=0, columnspan=1, pady=10)
         for proof in self.proofs:
             if proof["status"] == "Complete":
                 ttk.Label(
-                    self.completed_frame,
+                    self.frm_completed,
                     text=f"{proof['client']}: {proof['proof_type']}",
                 ).grid()
 
@@ -124,9 +122,9 @@ class ProofWizard(tk.Tk):
         )
         self.style.theme_use(selected_theme)  # Apply the selected theme
 
-    def generate_proof(self):
+    def make_proof(self):
         """Proof function"""
-        client = self.client_field.get()
+        client = self.combo_client.get()
         proof_type = self.proof_type_field.get()
         # Code to generate proof goes here
         print(f"Generated proof for {client} ({proof_type})")
