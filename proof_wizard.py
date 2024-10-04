@@ -14,7 +14,7 @@ import os
 import tkinter as tk
 from tkinter import ttk
 
-# pip install ttkbootstrap for the below
+# pip install ttkbootstrap for the below module to work
 from ttkbootstrap import Style
 
 
