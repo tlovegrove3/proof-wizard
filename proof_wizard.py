@@ -18,7 +18,7 @@ from tkinter import ttk
 from ttkbootstrap import Style
 
 
-class Proof_Wizard(tk.Tk):
+class ProofWizard(tk.Tk):
     """This is a tkinter module for generating proofs."""
 
     def __init__(self):
@@ -150,5 +150,5 @@ class Proof_Wizard(tk.Tk):
 
 
 if __name__ == "__main__":
-    app = Proof_Wizard()
+    app = ProofWizard()
     app.mainloop()
