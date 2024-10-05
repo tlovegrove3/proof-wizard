@@ -75,7 +75,7 @@ class ProofWizard(tk.Tk):
         self.proof_type_field = ttk.Combobox(
             self.frm_main, values=["Generic", "Approval"]
         )
-        self.proof_type_field.grid(row=4, column=1, padx=10, pady=10)
+        self.box_proof_type.grid(row=4, column=1, padx=10, pady=10)
 
         # Button to generate proofs
         self.btn_make_proof = ttk.Button(
