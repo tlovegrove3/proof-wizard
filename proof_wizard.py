@@ -72,7 +72,7 @@ class ProofWizard(tk.Tk):
         self.lbl_proof_type.grid(row=4, column=0, padx=10, pady=10, sticky="w")
 
         # Proof type dropdown
-        self.proof_type_field = ttk.Combobox(
+        self.box_proof_type = ttk.Combobox(
             self.frm_main, values=["Generic", "Approval"]
         )
         self.box_proof_type.grid(row=4, column=1, padx=10, pady=10)
