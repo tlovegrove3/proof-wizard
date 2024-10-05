@@ -115,7 +115,7 @@ class ProofWizard(tk.Tk):
                     text=f"{proof['client']}: {proof['proof_type']}",
                 ).grid()
 
-    def change_theme(self, event):
+    def change_theme(self, selected_theme):
         """Changes the theme of the application based on the dropdown selection."""
         selected_theme = (
             self.theme_var.get()  # Get the selected theme from the dropdown
