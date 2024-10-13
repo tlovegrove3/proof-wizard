@@ -64,10 +64,10 @@
         "completed_by": "TJ"
     },
     {
-        "client": "Client B",
+        "client": "Client A",
         "proof_type": "Approval",
         "created_by": "TJ",
-        "date_created": "2024-10-13 00:55:49",
+        "date_created": "2024-10-12",
         "date_completed": "2024-10-13 00:57:08",
         "completed_by": "TJ"
     },
@@ -75,7 +75,15 @@
         "client": "Client A",
         "proof_type": "Approval",
         "created_by": "TJ",
-        "date_created": "2024-10-12",
+        "date_created": "2024-10-01 12:00:00",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 00:55:49",
         "date_completed": "2024-10-13 00:57:08",
         "completed_by": "TJ"
     },
@@ -108,14 +116,6 @@
         "proof_type": "Approval",
         "created_by": "TJ",
         "date_created": "2024-10-12",
-        "date_completed": "2024-10-13 00:57:08",
-        "completed_by": "TJ"
-    },
-    {
-        "client": "Client A",
-        "proof_type": "Approval",
-        "created_by": "TJ",
-        "date_created": "2024-10-01 12:00:00",
         "date_completed": "2024-10-13 00:57:08",
         "completed_by": "TJ"
     },
@@ -197,6 +197,70 @@
         "created_by": "TJ",
         "date_created": "2024-10-13 03:17:48",
         "date_completed": "2024-10-13 04:12:21",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client D",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 10:54:20",
+        "date_completed": "2024-10-13 10:54:35",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 03:17:40",
+        "date_completed": "2024-10-13 10:56:10",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "",
+        "proof_type": "",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 14:01:48",
+        "date_completed": "2024-10-13 14:01:48",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "",
+        "proof_type": "",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 14:01:49",
+        "date_completed": "2024-10-13 14:01:49",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Medical Practice Alliance",
+        "proof_type": "Generic",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 15:53:00",
+        "date_completed": "2024-10-13 15:53:00",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client with a very long name",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 15:05:00",
+        "date_completed": "2024-10-13 15:53:12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Doctors R Us",
+        "proof_type": "Generic",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 16:49:26",
+        "date_completed": "2024-10-13 16:49:26",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Medical Practice Alliance",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 15:53:08",
+        "date_completed": "2024-10-13 16:49:36",
         "completed_by": "TJ"
     }
 ]
