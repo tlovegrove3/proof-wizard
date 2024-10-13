@@ -25,11 +25,10 @@ class ProofWizard(tk.Tk):
         super().__init__()
         self.style = Style(theme="solar")
         self.title("Proof Wizard")
-        self.geometry("600x300")
-
-        # not sure if I want this turned on or not but leaving off for now.
-        # self.grid_rowconfigure(0, weight=1)  # Allow the first row to expand
-        # self.grid_columnconfigure(0, weight=1)  # Allow the first column to expand
+        self.geometry("550x300")
+        self.minsize(550, 300)
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
 
         # Create a ttk Notebook for setting up multiple tabs
         self.nb = ttk.Notebook(self)
@@ -87,7 +86,7 @@ class ProofWizard(tk.Tk):
 
         # Exit button to close application
         self.btn_exit = ttk.Button(self.frm_main, text="Exit", command=self.quit)
-        self.btn_exit.grid(row=6, column=1, columnspan=1, padx=10, pady=10, sticky="e")
+        self.btn_exit.grid(row=6, column=1, columnspan=1, padx=10, pady=10)
 
         # Create a dropdown to select themes
         self.lbl_theme = ttk.Label(self.frm_main, text="Select Theme:")
@@ -99,7 +98,7 @@ class ProofWizard(tk.Tk):
         # Setup theme dropdown and set the values
         self.combo_theme = ttk.Combobox(self.frm_main, textvariable=self.theme_var)
         self.combo_theme["values"] = self.style.theme_names()
-        self.combo_theme.grid(row=0, column=6, padx=10, pady=10)
+        self.combo_theme.grid(row=0, column=6, padx=10, pady=10, sticky="e")
 
         # Bind the combo selection event to the change_theme method
         self.combo_theme.bind("<<ComboboxSelected>>", self.change_theme)
@@ -125,7 +124,7 @@ class ProofWizard(tk.Tk):
     def make_proof(self):
         """Proof function"""
         client = self.combo_client.get()
-        proof_type = self.proof_type_field.get()
+        proof_type = self.box_proof_type.get()
         # Code to generate proof goes here
         print(f"Generated proof for {client} ({proof_type})")
 
