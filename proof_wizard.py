@@ -40,10 +40,12 @@ class ProofWizard(tk.Tk):
         # Create main frame for the "Main Proofs" tab
         self.frm_main = ttk.Frame(self.nb)
         self.nb.add(self.frm_main, text="Proof Setup")
+        self.frm_main.grid_rowconfigure(3,weight=1)
 
         # Create completed frame for the "Completed Proofs" tab
         self.frm_completed = ttk.Frame(self.nb)
         self.nb.add(self.frm_completed, text="Completed Proofs")
+        self.frm_completed.grid_rowconfigure(1,weight=1)
 
         # Add the Instructions frame
         self.frm_instructions = ttk.Frame(self.nb)
@@ -87,28 +89,28 @@ class ProofWizard(tk.Tk):
 
         # Client label
         self.lbl_client = ttk.Label(self.frm_main, text="Select Client:")
-        self.lbl_client.grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        self.lbl_client.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 
         # Dropdown of client list
         self.combo_client = ttk.Combobox(self.frm_main, values=self.clients)
-        self.combo_client.grid(row=3, column=1, padx=10, pady=10)
+        self.combo_client.grid(row=2, column=1, padx=10, pady=10)
 
         # Proof type label
         self.lbl_proof_type = ttk.Label(self.frm_main, text="Select Proof Type:")
-        self.lbl_proof_type.grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        self.lbl_proof_type.grid(row=3, column=0, padx=10, pady=10, sticky="nw")
 
         # Proof type dropdown
         self.box_proof_type = ttk.Combobox(
             self.frm_main, values=["Generic", "Approval"]
         )
-        self.box_proof_type.grid(row=4, column=1, padx=10, pady=10)
+        self.box_proof_type.grid(row=3, column=1, padx=10, pady=10, sticky="nw")
 
         # Button to generate proofs
         self.btn_make_proof = ttk.Button(
             self.frm_main, text="Generate Proof", command=self.make_proof
         )
         self.btn_make_proof.grid(
-            row=5, column=1, columnspan=1, padx=10, pady=10, sticky="e"
+            row=2, column=2, columnspan=1, padx=10, pady=10, sticky="e"
         )
 
         # Get the current theme
@@ -121,7 +123,7 @@ class ProofWizard(tk.Tk):
 
         # Exit button to close application
         self.btn_exit = ttk.Button(self.frm_main, text="Exit", command=self.quit)
-        self.btn_exit.grid(row=6, column=1, columnspan=1, padx=10, pady=10)
+        self.btn_exit.grid(row=4, column=0, columnspan=1, padx=10, pady=10, sticky="w")
 
         # Treeview for pending approvals
         self.pending_tree = ttk.Treeview(
@@ -131,8 +133,9 @@ class ProofWizard(tk.Tk):
             style="Treeview",
         )
         self.pending_tree.grid(
-            row=3, column=3, rowspan=3, padx=10, pady=10, sticky="nsew"
+            row=2, column=3, rowspan=3, padx=10, pady=10, sticky="nsew"
         )
+
         self.pending_tree.heading(
             "Date Created",
             text="Date Created",
@@ -156,7 +159,7 @@ class ProofWizard(tk.Tk):
         self.btn_mark_complete = ttk.Button(
             self.frm_main, text="Mark Complete", command=self.mark_proof_complete
         )
-        self.btn_mark_complete.grid(row=6, column=3, padx=10, pady=10, sticky="e")
+        self.btn_mark_complete.grid(row=3, column=2, padx=10, pady=10, sticky="ne")
 
     def setup_frm_instructions(self):
         """Create a label for the instructions heading"""
@@ -201,6 +204,7 @@ class ProofWizard(tk.Tk):
         """Sets up widgets for the completed proofs tab"""
         lbl = ttk.Label(self.frm_completed, text="Completed Proofs")
         lbl.grid(row=0, column=0, columnspan=1, pady=10)
+
         # Treeview for completed proofs
         self.completed_tree = ttk.Treeview(
             self.frm_completed,
@@ -214,6 +218,8 @@ class ProofWizard(tk.Tk):
             show="headings",
             style="Treeview",
         )
+        
+
         # Vertical scrollbar for completed tree
         self.completed_scrollbar = ttk.Scrollbar(
             self.frm_completed, orient="vertical", command=self.completed_tree.yview
@@ -222,6 +228,7 @@ class ProofWizard(tk.Tk):
 
         # Place the treeview and scrollbar using grid
         self.completed_tree.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
+        
         self.completed_scrollbar.grid(row=1, column=1, sticky="ns")
 
         self.completed_tree.heading(
@@ -251,6 +258,7 @@ class ProofWizard(tk.Tk):
         )
 
         self.load_completed_proofs()
+        
 
     def load_json(self, filename):
         """Load JSON data from a file."""
