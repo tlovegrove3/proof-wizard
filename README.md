@@ -4,19 +4,25 @@ Proof Wizard is a Python-based GUI project using `tkinter`. It is currently a pr
 
 ## What I’ve Completed
 
-- A working GUI with 2 tabs, each with configured widgets.
+- A working GUI with 3 tabs, each with configured widgets.
 - Modern default styling, with a dropdown for users to select other styles.
 - Dropdown list for clients.
 - Dropdown list for proof types.
 - A `Generate Proof` button.
 - A working `Exit` button.
+- Utilizing JSON files for storing the list of clients, pending proofs, and completed proofs.
+- Selecting from the pending list and marking as complete will remove them from that list
+and add them to the completed list.
+- Active username displays in the window.
+- Username is shown on created and completed proofs.
+- Added icon in the upper left of the main window.
+- Added logo image to the instructions tab.
+- Both pending and completed lists can be sorted by any of the columns in descending
+or ascending order by clicking on the column headers.
 
 ## Problems and Next Steps
 
-- Utilize JSON files for storing the list of clients, proof types, and completed proofs. Currently, the data is hardcoded.
-- Update the `generate proof` function to add the result to the JSON list instead of just using `print()`. The Completed Proofs tab will display this updated list.
-- Consider adding a third tab for Pending Proofs or include a Pending Proofs list on the main tab to reduce tab switching.
-- Add error handling and input validation for a smoother user experience.
-- Implement functionality to select a pending proof from the list and mark it as complete, moving it from the Pending list to the Completed list.
-- Add “Created By” and “Last Modified By” attributes to each proof, including optional creation and completion date/time.
-- Explore how to incorporate images into the application.
+- Improve error handling and input validation for a smoother user experience.
+- Add an archive feature. The user will be able to select from the completed list
+which files to archive. They will be removed from the completed list and added to the
+archive list.
