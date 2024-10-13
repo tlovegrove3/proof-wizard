@@ -1,0 +1,154 @@
+[
+    {
+        "client": "Client D",
+        "proof_type": "Approval",
+        "created_by": "user4",
+        "date_created": "2024-09-20",
+        "date_completed": "2024-09-22",
+        "completed_by": "user4"
+    },
+    {
+        "client": "Client C",
+        "proof_type": "Generic",
+        "created_by": "user3",
+        "date_created": "2024-09-25",
+        "date_completed": "2024-09-26",
+        "completed_by": "user3"
+    },
+    {
+        "client": "Client A",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client A",
+        "proof_type": "Approval",
+        "created_by": "user1",
+        "date_created": "2024-10-01",
+        "date_completed": "2024-10-12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "user2",
+        "date_created": "2024-10-03",
+        "date_completed": "2024-10-12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client C",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client D",
+        "proof_type": "Generic",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-12",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 00:50:46",
+        "date_completed": "2024-10-13 00:50:50",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 00:55:49",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client A",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client C",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client C",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client D",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-12",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client A",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-01 12:00:00",
+        "date_completed": "2024-10-13 00:57:08",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Generic",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 02:50:27",
+        "date_completed": "2024-10-13 02:50:27",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 01:15:56",
+        "date_completed": "2024-10-13 02:50:43",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 02:50:32",
+        "date_completed": "2024-10-13 02:50:45",
+        "completed_by": "TJ"
+    },
+    {
+        "client": "Client B",
+        "proof_type": "Approval",
+        "created_by": "TJ",
+        "date_created": "2024-10-13 02:50:40",
+        "date_completed": "2024-10-13 02:50:47",
+        "completed_by": "TJ"
+    }
+]
