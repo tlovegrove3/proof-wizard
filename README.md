@@ -26,3 +26,5 @@ or ascending order by clicking on the column headers.
 - Add an archive feature. The user will be able to select from the completed list
 which files to archive. They will be removed from the completed list and added to the
 archive list.
+- Next steps are to add integration with production system to allow for triggering
+proof generation.
