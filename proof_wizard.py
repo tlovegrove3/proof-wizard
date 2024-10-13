@@ -26,8 +26,8 @@ class ProofWizard(tk.Tk):
         super().__init__()
         self.style = Style(theme="solar")
         self.title("Proof Wizard")
-        self.geometry("1025x450")
-        self.minsize(1025, 450)
+        self.geometry("1050x450")
+        self.minsize(1050, 450)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.icon_image = PhotoImage(file="images/icon.png")
@@ -128,7 +128,7 @@ class ProofWizard(tk.Tk):
             self.frm_main,
             columns=("Date Created", "Created By", "Client"),
             show="headings",
-            # style="Treeview",
+            style="Treeview",
         )
         self.pending_tree.grid(
             row=3, column=3, rowspan=3, padx=10, pady=10, sticky="nsew"
@@ -222,9 +222,8 @@ class ProofWizard(tk.Tk):
 
         # Place the treeview and scrollbar using grid
         self.completed_tree.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
-        self.completed_scrollbar.grid(row=1, column=2, sticky="ns")
+        self.completed_scrollbar.grid(row=1, column=1, sticky="ns")
 
-        self.completed_tree.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
         self.completed_tree.heading(
             "Date Created",
             text="Date Created",
